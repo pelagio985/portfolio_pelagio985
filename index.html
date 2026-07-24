@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Xiquembo - Cybersecurity Analyst | SOC | System Administration | GRC. Portfolio profissional de cibersegurança.">
+    <meta name="keywords" content="cybersecurity, SOC analyst, system administration, GRC, Junior Xiquembo, Moçambique, Pemba">
+    <meta name="author" content="Junior Xiquembo">
+    <meta property="og:title" content="Junior Xiquembo - Cybersecurity Portfolio">
+    <meta property="og:description" content="Portfolio profissional de cibersegurança - SOC Analyst | SysAdmin | GRC">
+    <meta property="og:type" content="website">
+    <title>Junior Xiquembo | Cybersecurity Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --primary-light: #112240;
+            --primary-lighter: #233554;
+            --accent: #64ffda;
+            --accent-dim: rgba(100, 255, 218, 0.1);
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --text-muted: #495670;
+            --white: #e6f1ff;
+            --danger: #ff6b6b;
+            --warning: #ffd93d;
+            --success: #64ffda;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--accent-dim);
+            color: var(--accent);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-lighter);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 15px 50px;
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '<';
+            color: var(--accent);
+        }
+
+        .logo::after {
+            content: '/>';
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '0' counter(nav-counter) '.';
+            counter-increment: nav-counter;
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            counter-reset: nav-counter;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 150px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero-greeting {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-name {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            animation: fadeInUp 0.5s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-title {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            animation: fadeInUp 0.5s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            max-width: 540px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.5s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 0.5s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dim);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(100, 255, 218, 0.8);
+            transform: translateY(-3px);
+        }
+
+        /* Terminal effect */
+        .terminal {
+            position: absolute;
+            right: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--primary-lighter);
+            animation: fadeIn 0.8s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        .terminal-header {
+            background: var(--primary-lighter);
+            padding: 12px 15px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: var(--danger); }
+        .terminal-dot.yellow { background: var(--warning); }
+        .terminal-dot.green { background: var(--success); }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .terminal-line {
+            margin-bottom: 5px;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: var(--accent);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section {
+            padding: 100px 150px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--primary-lighter);
+            margin-left: 20px;
+            max-width: 300px;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-text p strong {
+            color: var(--accent);
+        }
+
+        .about-skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-tag::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-dim);
+            mix-blend-mode: screen;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .about-image-wrapper:hover::before {
+            background: transparent;
+        }
+
+        .about-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image-wrapper:hover::after {
+            top: 15px;
+            left: 15px;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(30%);
+            transition: var(--transition);
+        }
+
+        .about-image-wrapper:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* ===== EXPERIENCE SECTION ===== */
+        .experience-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 30px;
+            border-left: 2px solid var(--primary-lighter);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: left;
+            width: 200px;
+            position: relative;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .tab-btn.active::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .tab-content h3 a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .tab-content .date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tab-content ul {
+            list-style: none;
+        }
+
+        .tab-content ul li {
+            color: var(--text-secondary);
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .tab-content ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--primary-light);
+            border-radius: 4px;
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary-lighter);
+            box-shadow: var(--shadow);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .project-folder {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .project-card h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .project-card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-tech span {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .project-featured {
+            border: 1px solid var(--accent);
+            position: relative;
+        }
+
+        .project-featured::before {
+            content: 'Featured';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--primary);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* ===== SKILLS MATRIX ===== */
+        .skills-section {
+            background: var(--primary-light);
+            border-radius: 4px;
+            padding: 40px;
+            margin-top: 20px;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .skill-category h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h4 i {
+            color: var(--accent);
+        }
+
+        .skill-bar {
+            margin-bottom: 15px;
+        }
+
+        .skill-bar-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar-header span {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .skill-bar-header span:first-child {
+            color: var(--text-secondary);
+        }
+
+        .skill-bar-header span:last-child {
+            color: var(--accent);
+        }
+
+        .skill-bar-track {
+            height: 6px;
+            background: var(--primary-lighter);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), rgba(100, 255, 218, 0.5));
+            border-radius: 3px;
+            transition: width 1.5s ease;
+            width: 0;
+        }
+
+        .skill-bar-fill.animate {
+            width: var(--width);
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: var(--primary-light);
+            border-radius: 4px;
+            padding: 25px;
+            border-left: 3px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateX(5px);
+            background: var(--primary-lighter);
+        }
+
+        .cert-card.in-progress {
+            border-left-color: var(--warning);
+        }
+
+        .cert-card.planned {
+            border-left-color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .cert-status {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .cert-status.completed {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+        }
+
+        .cert-status.in-progress {
+            background: rgba(255, 217, 61, 0.1);
+            color: var(--warning);
+        }
+
+        .cert-status.planned {
+            background: rgba(73, 86, 112, 0.2);
+            color: var(--text-muted);
+        }
+
+        .cert-card h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .cert-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .contact-email {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 50px;
+            transition: var(--transition);
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .hero { padding: 0 80px; }
+            section { padding: 80px 80px; }
+            .terminal { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 25px; }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .hero { padding: 100px 25px 50px; }
+            section { padding: 60px 25px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .experience-tabs { flex-direction: column; }
+            .tab-btn { width: 100%; }
+            .hero-cta { flex-direction: column; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-light);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-dim);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">JX</a>
+        <ul class="nav-links">
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#experience">Experiência</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#skills">Competências</a></li>
+            <li><a href="#certs">Certificações</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-greeting">Olá, o meu nome é</p>
+            <h1 class="hero-name">Junior Xiquembo.</h1>
+            <h2 class="hero-title">Construo <span>defesas digitais.</span></h2>
+            <p class="hero-description">
+                Estudante de Engenharia Informática e Telecomunicações, focado em cibersegurança. 
+                Especializo-me em monitorização de sistemas, automação de processos de segurança 
+                e análise de ameaças. Baseado em Pemba, Moçambique — disponível para trabalho remoto global.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i> Ver Projetos
+                </a>
+                <a href="mailto:example@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contactar
+                </a>
+            </div>
+        </div>
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+                <span style="margin-left: 10px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">security_ops.sh</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line"><span class="terminal-prompt">$</span> whoami</div>
+                <div class="terminal-line">junior_xiquembo</div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> cat skills.txt</div>
+                <div class="terminal-line">Python | Linux | Windows | SIEM</div>
+                <div class="terminal-line">Automação | Monitorização | Redes</div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> status --security</div>
+                <div class="terminal-line" style="color: var(--accent);">[SECURE] Homelab ativo</div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-cursor"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">01.</span>
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Olá! Sou o <strong>Junior Xiquembo</strong>, um entusiasta de cibersegurança de 
+                    <strong>Pemba, Cabo Delgado — Moçambique</strong>. Atualmente estou no 3º ano de 
+                    <strong>Engenharia Informática e Telecomunicações</strong> na Universidade Politécnica de Nampula (ISEUNA), 
+                    com previsão de conclusão em 2028.
+                </p>
+                <p>
+                    A minha jornada na tecnologia começou com o curso intensivo de informática no 
+                    <strong>CPRD/INAG (atual ATDI)</strong>, onde desenvolvi bases sólidas em sistemas computacionais. 
+                    Desde então, tenho construído um <strong>homelab de segurança</strong> onde experimento com 
+                    SIEMs, automação de processos e monitorização de sistemas Linux e Windows.
+                </p>
+                <p>
+                    O que me diferencia é a combinação de <strong>pensamento analítico</strong>, 
+                    <strong>atenção ao detalhe</strong> e <strong>capacidade de automação com Python</strong>. 
+                    Acredito que a melhor defesa cibernética começa com a observação atenta e a resposta rápida.
+                </p>
+                <p>Aqui estão algumas tecnologias com que tenho trabalhado recentemente:</p>
+                <div class="about-skills">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">Linux (Ubuntu/CentOS)</div>
+                    <div class="skill-tag">Windows Server</div>
+                    <div class="skill-tag">Wazuh SIEM</div>
+                    <div class="skill-tag">Splunk</div>
+                    <div class="skill-tag">Bash/Shell</div>
+                    <div class="skill-tag">HTML/CSS/JS</div>
+                    <div class="skill-tag">MongoDB/Firebase</div>
+                    <div class="skill-tag">Git/GitHub</div>
+                    <div class="skill-tag">TCP/IP</div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="about-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=500&fit=crop" alt="Junior Xiquembo - Cybersecurity Workspace">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">02.</span>
+            <h2 class="section-title">Experiência & Formação</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="experience-tabs">
+            <button class="tab-btn active" onclick="showTab(0)">ATDI / INAG</button>
+            <button class="tab-btn" onclick="showTab(1)">Campanhas SDSMAs</button>
+            <button class="tab-btn" onclick="showTab(2)">Online Cyber</button>
+            <button class="tab-btn" onclick="showTab(3)">Unity Moz</button>
+            <button class="tab-btn" onclick="showTab(4)">ISEUNA</button>
+        </div>
+
+        <div class="tab-content active" id="tab-0">
+            <h3>Formação em Informática <a href="#">@ ATDI (ex-INAG)</a></h3>
+            <span class="date">Agosto — Novembro 2021</span>
+            <ul>
+                <li>Curso intensivo de informática <strong>básica e intermédia</strong> no Instituto Nacional de Governação Eletrónica</li>
+                <li>Desenvolvimento de competências em <strong>gestão de dados, sistemas operativos e ferramentas de produtividade</strong></li>
+                <li>Introdução aos conceitos de <strong>segurança da informação</strong> e boas práticas digitais</li>
+                <li>Base fundamental para a transição para a área de cibersegurança</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="tab-1">
+            <h3>Participante em Campanhas de Distribuição <a href="#">@ SDSMAs Namuno</a></h3>
+            <span class="date">2021 — 2025</span>
+            <ul>
+                <li>Campanha de Distribuição Massiva de Medicamentos em <strong>Metuge (2021)</strong></li>
+                <li>Campanha de Distribuição de Mosquiteiros em <strong>Namuno (2022 e 2025)</strong></li>
+                <li>Levantamento de dados patrocinado pelas <strong>SDSMAs de Namuno (2025)</strong></li>
+                <li>Utilização de <strong>KoboCollect/ODK</strong> para coleta, validação e gestão de dados de campo</li>
+                <li>Desenvolvimento de <strong>atenção ao detalhe</strong> e <strong>rigor na documentação</strong> — competências transferíveis para GRC</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="tab-2">
+            <h3>Desenvolvedor & Administrador de Sistemas <a href="#">@ Online Cyber</a></h3>
+            <span class="date">Projeto Empresarial</span>
+            <ul>
+                <li>Desenvolvimento do <strong>website oficial</strong> da empresa Online Cyber</li>
+                <li>Criação de <strong>Business Control Panel / Dashboard</strong> para gestão interna</li>
+                <li>Manutenção de sistemas e <strong>monitorização de infraestrutura</strong></li>
+                <li>Experiência prática em <strong>gestão de dados e automação de processos</strong></li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="tab-3">
+            <h3>Desenvolvedor de Jogos <a href="#">@ Unity Moz</a></h3>
+            <span class="date">Projeto Académico/Profissional</span>
+            <ul>
+                <li>Desenvolvimento do <strong>Karingana Quiz Game</strong> — jogo educativo de quiz</li>
+                <li>Colaboração em equipa com programadores e designers</li>
+                <li>Aplicação de <strong>pensamento lógico e resolução de problemas</strong> em ambiente de desenvolvimento</li>
+                <li>Referência: Ivan Eusebio — Programador e Fundador da Unity Moz</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="tab-4">
+            <h3>Estudante de Engenharia <a href="#">@ ISEUNA — Universidade Politécnica de Nampula</a></h3>
+            <span class="date">2023 — 2025 (3º Ano) | Previsão: 2028</span>
+            <ul>
+                <li>Licenciatura em <strong>Engenharia Informática e Telecomunicações</strong></li>
+                <li>Participação em <strong>projeto académico integrado</strong> multidisciplinar: web development, bases de dados, gestão ágil</li>
+                <li>Aplicação de conceitos de <strong>organização, processamento e disponibilização de informação</strong></li>
+                <li>Desenvolvimento de bases teóricas em <strong>redes, sistemas operativos e segurança</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">03.</span>
+            <h2 class="section-title">Projetos de Segurança</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card project-featured">
+                <div class="project-header">
+                    <i class="fas fa-shield-alt project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">SIEM Homelab — Wazuh</a></h3>
+                <p>
+                    Configuração completa de um SIEM open-source (Wazuh) para monitorização de endpoints 
+                    Linux e Windows. Inclui regras de deteção personalizadas, dashboards de análise e 
+                    alertas automatizados para atividades suspeitas.
+                </p>
+                <div class="project-tech">
+                    <span>Wazuh</span>
+                    <span>Linux</span>
+                    <span>Windows</span>
+                    <span>ELK Stack</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-robot project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">Security Automation Scripts</a></h3>
+                <p>
+                    Conjunto de scripts Python para automação de tarefas de segurança: análise de logs, 
+                    verificação de integridade de ficheiros, scan de portas e geração de relatórios de vulnerabilidades.
+                </p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Bash</span>
+                    <span>JSON</span>
+                    <span>Cron</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-network-wired project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">Network Security Lab</a></h3>
+                <p>
+                    Laboratório de redes com pfSense/OPNsense para prática de configuração de firewalls, 
+                    VLANs, VPNs e segmentação de rede. Inclui simulações de ataques e defesas em ambiente controlado.
+                </p>
+                <div class="project-tech">
+                    <span>pfSense</span>
+                    <span>VLAN</span>
+                    <span>VPN</span>
+                    <span>VirtualBox</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-gamepad project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">Karingana Quiz Game</a></h3>
+                <p>
+                    Jogo educativo de quiz desenvolvido na Unity Moz. Aplicação web interativa com 
+                    sistema de pontuação, categorias de perguntas e interface responsiva.
+                </p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Firebase</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-chart-line project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">Business Control Dashboard</a></h3>
+                <p>
+                    Painel de controlo empresarial para gestão de operações da Online Cyber. 
+                    Visualização de métricas, gestão de stock e relatórios automatizados.
+                </p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-shopping-cart project-folder"></i>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h3><a href="#">Take_Away Deliver Website</a></h3>
+                <p>
+                    Website oficial para serviço de take away e delivery. Sistema de pedidos online, 
+                    gestão de menu e integração com métodos de pagamento.
+                </p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Firebase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">04.</span>
+            <h2 class="section-title">Competências Técnicas</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-section">
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h4><i class="fas fa-shield-alt"></i> Cibersegurança</h4>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Monitorização de SIEM</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Análise de Logs</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Deteção de Ameaças</span>
+                            <span>55%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Firewalls & Redes</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Programação & Scripting</h4>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Bash/Shell</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>HTML/CSS/JS</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>PowerShell</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-server"></i> Sistemas & Infraestrutura</h4>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Linux (Ubuntu/CentOS)</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Windows Server</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Virtualização</span>
+                            <span>55%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Bases de Dados</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-tools"></i> Ferramentas</h4>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Git/GitHub</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Wazuh SIEM</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>Splunk</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>KoboCollect/ODK</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="--width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certs" class="fade-in">
+        <div class="section-header">
+            <span class="section-number">05.</span>
+            <h2 class="section-title">Certificações</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="certs-grid">
+            <div class="cert-card">
+                <span class="cert-status completed">Concluído</span>
+                <h4>Curso Intensivo de Informática (Básico & Intermédio)</h4>
+                <p>CPRD/INAG (atual ATDI) — Agosto a Novembro 2021</p>
+            </div>
+            <div class="cert-card">
+                <span class="cert-status completed">Concluído</span>
+                <h4>Canva Graphic Design — 50 Projetos</h4>
+                <p>Canva Team — Janeiro 2024</p>
+            </div>
+            <div class="cert-card in-progress">
+                <span class="cert-status in-progress">Em Preparação</span>
+                <h4>CompTIA Security+ (SY0-701)</h4>
+                <p>Certificação de entrada em cibersegurança — Estudo ativo em curso</p>
+            </div>
+            <div class="cert-card planned">
+                <span class="cert-status planned">Planeado</span>
+                <h4>CompTIA CySA+</h4>
+                <p>Análise de cibersegurança — Após Security+ e experiência em SOC</p>
+            </div>
+            <div class="cert-card planned">
+                <span class="cert-status planned">Planeado</span>
+                <h4>AWS Cloud Practitioner</h4>
+                <p>Fundamentos de cloud computing — Planeado para 2027</p>
+            </div>
+            <div class="cert-card planned">
+                <span class="cert-status planned">Planeado</span>
+                <h4>ISO 27001 Foundation</h4>
+                <p>Gestão de segurança da informação — Para carreira em GRC</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="contact-content">
+            <p class="hero-greeting" style="justify-content: center; display: flex;">05. O que vem a seguir?</p>
+            <h2>Entre em Contacto</h2>
+            <p>
+                Estou atualmente à procura de oportunidades em <strong>cibersegurança</strong>, 
+                especialmente como <strong>Analista SOC (Nível 1)</strong>, <strong>System Administrator com foco em segurança</strong> 
+                ou <strong>Analista GRC Júnior</strong>. Disponível para trabalho remoto ou híbrido.
+            </p>
+            <a href="mailto:example@gmail.com" class="contact-email">example@gmail.com</a>
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://blogger.com/" target="_blank" title="Blog"><i class="fab fa-blogger-b"></i></a>
+                <a href="https://wa.me/258123456789" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Desenhado & Desenvolvido por Junior Xiquembo</p>
+        <p style="margin-top: 10px;">Pemba, Cabo Delgado — Moçambique | 2026</p>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = document.getElementById('scrollTop');
+
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Tab switching
+        function showTab(index) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+
+            contents.forEach((content, i) => {
+                content.classList.toggle('active', i === index);
+            });
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate skill bars
+                    const skillBars = entry.target.querySelectorAll('.skill-bar-fill');
+                    skillBars.forEach(bar => {
+                        setTimeout(() => {
+                            bar.classList.add('animate');
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Typing effect for terminal
+        const terminalLines = [
+            { text: '$ nmap -sV 192.168.1.0/24', delay: 2000 },
+            { text: 'Starting Nmap scan...', delay: 3500 },
+            { text: 'Host 192.168.1.1 is up', delay: 4500 },
+            { text: '$ python3 security_scan.py', delay: 6000 },
+            { text: '[INFO] Scan complete. 0 vulnerabilities found.', delay: 7500 },
+        ];
+
+        // Add dynamic terminal content
+        setTimeout(() => {
+            const terminalBody = document.querySelector('.terminal-body');
+            if (terminalBody) {
+                terminalLines.forEach(line => {
+                    setTimeout(() => {
+                        const div = document.createElement('div');
+                        div.className = 'terminal-line';
+                        if (line.text.startsWith('$')) {
+                            div.innerHTML = `<span class="terminal-prompt">$</span> ${line.text.substring(2)}`;
+                        } else if (line.text.includes('[INFO]')) {
+                            div.innerHTML = `<span style="color: var(--accent);">${line.text}</span>`;
+                        } else {
+                            div.textContent = line.text;
+                        }
+                        terminalBody.appendChild(div);
+                        terminalBody.scrollTop = terminalBody.scrollHeight;
+                    }, line.delay);
+                });
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
