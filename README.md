@@ -1,4 +1,4 @@
-# Junior Xiquembo — Cybersecurity Portfolio
+Pelagio985 — Cybersecurity Portfolio
 
 > 🛡️ Portfolio profissional de cibersegurança focado em SOC Analyst, System Administration e GRC.
 
@@ -6,21 +6,19 @@
 ![Status](https://img.shields.io/badge/Status-Ativo-success?style=flat-square)
 ![Location](https://img.shields.io/badge/Local-Pemba,%20Moçambique-blue?style=flat-square)
 
----
 
-## 🚀 Sobre
+🚀 Sobre
 
 Este é o meu portfolio profissional, desenvolvido para apresentar as minhas competências, projetos e experiência na área de **cibersegurança**. O site está hospedado no **GitHub Pages** e serve como ponto central para recrutadores e potenciais empregadores conhecerem o meu trabalho.
 
-### Objetivos do Portfolio
+Objetivos do Portfolio
 - ✅ Demonstrar competências técnicas em cibersegurança
 - ✅ Documentar projetos práticos (homelab, automação, SIEM)
 - ✅ Facilitar contacto com recrutadores internacionais
 - ✅ Mostrar progresso de certificações e aprendizagem contínua
 
----
 
-## 🛠️ Tecnologias Utilizadas
+🛠️ Tecnologias Utilizadas
 
 | Categoria | Tecnologias |
 |-----------|-------------|
@@ -30,20 +28,15 @@ Este é o meu portfolio profissional, desenvolvido para apresentar as minhas com
 | **Fontes** | Inter, JetBrains Mono (Google Fonts) |
 | **Hospedagem** | GitHub Pages |
 
----
+📁 Estrutura do Projeto
 
-## 📁 Estrutura do Projeto
-
-```
 portfolio-junior-xiquembo/
 ├── index.html          # Página principal (single-page portfolio)
 ├── README.md           # Este ficheiro
 └── assets/             # Recursos adicionais (futuro)
-```
 
----
 
-## 🎯 Secções do Portfolio
+🎯 Secções do Portfolio
 
 | # | Secção | Descrição |
 |---|--------|-----------|
@@ -54,19 +47,20 @@ portfolio-junior-xiquembo/
 | 05 | **Certificações** | Roadmap de certificações (concluídas, em curso, planeadas) |
 | 06 | **Contacto** | Links para email e redes sociais |
 
----
 
-## 🚀 Como Hospedar no GitHub Pages
+🚀 Como Hospedar no GitHub Pages
 
-### Passo 1: Criar Repositório
+Passo 1: Criar Repositório
+
 1. Acede a [github.com](https://github.com)
 2. Clica em **"New Repository"**
 3. Nome: `junior-xiquembo` (ou outro nome à tua escolha)
 4. Seleciona **"Public"**
 5. Clica em **"Create repository"**
 
-### Passo 2: Fazer Upload dos Ficheiros
-```bash
+Passo 2: Fazer Upload dos Ficheiros
+
+bash
 # Opção A: Via Git (recomendado)
 git clone https://github.com/SEU-USERNAME/junior-xiquembo.git
 cd junior-xiquembo
@@ -81,18 +75,22 @@ git push origin main
 # 3. Clica em "Commit changes"
 ```
 
-### Passo 3: Ativar GitHub Pages
+
+Passo 3: Ativar GitHub Pages
+
 1. No repositório, vai a **Settings** (separador superior)
 2. No menu lateral, clica em **Pages**
 3. Em **Source**, seleciona **Deploy from a branch**
 4. Seleciona a branch **main** e pasta **/(root)**
 5. Clica em **Save**
 6. Aguarda 1-2 minutos — o site estará disponível em:
-   ```
-   https://SEU-USERNAME.github.io/junior-xiquembo/
+   
+
+https://SEU-USERNAME.github.io/junior-xiquembo/
    ```
 
-### Passo 4: Configurar Domínio Personalizado (Opcional)
+Passo 4: Configurar Domínio Personalizado (Opcional)
+
 1. Compra um domínio (ex: juniorxiquembo.com) na Namecheap, GoDaddy, etc.
 2. No GitHub Pages Settings, introduz o domínio em **Custom domain**
 3. No painel do teu registador de domínio, adiciona um registo CNAME:
@@ -100,18 +98,17 @@ git push origin main
    - Value: `SEU-USERNAME.github.io`
 4. Aguarda propagação DNS (até 24h)
 
----
 
-## 📊 Métricas de Performance
+📊 Métricas de Performance
 
-- ⚡ **PageSpeed Score**: ~95/100 (otimizado para mobile)
-- 📱 **Responsive**: Funciona em desktop, tablet e mobile
-- 🌐 **SEO**: Meta tags, Open Graph e schema markup incluídos
-- ♿ **Acessibilidade**: Contraste adequado, navegação por teclado
+- ⚡ PageSpeed Score: ~95/100 (otimizado para mobile)
+- 📱 Responsive: Funciona em desktop, tablet e mobile
+- 🌐 SEO: Meta tags, Open Graph e schema markup incluídos
+- ♿ Acessibilidade: Contraste adequado, navegação por teclado
 
----
 
-## 🔄 Atualizações Futuras
+
+🔄 Atualizações Futuras
 
 - [ ] Adicionar secção de blog técnico
 - [ ] Integrar formulário de contacto (Formspree)
@@ -120,21 +117,18 @@ git push origin main
 - [ ] Adicionar certificados em formato digital
 - [ ] Integrar com Google Analytics
 
----
 
-## 📞 Contacto
 
-- 📧 Email: [example@gmail.com](mailto:example@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/junior-xiquembo](https://linkedin.com/)
-- 🐙 GitHub: [github.com/junior-xiquembo](https://github.com/)
-- 🐦 Twitter/X: [@juniorxiquembo](https://twitter.com/)
+📞 Contacto
 
----
+- 📧 Email: pelagio985@gmail.com
+
+- 💼 LinkedIn: linkedin.com/in/
+
+- 🐙 GitHub: github.com/(https://github.com/
 
 > *"A melhor defesa cibernética começa com a observação atenta e a resposta rápida."*
 >
-> — Junior Xiquembo
+> — Pelagio985
 
----
-
-**Licença**: MIT — Sinta-se à vontade para usar como template, mas por favor dê crédito.
+Licença: MIT — Sinta-se à vontade para usar como template, mas por favor dê crédito.
